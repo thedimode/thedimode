@@ -13,15 +13,15 @@ canonical: true
 
 ## Who I am
 
-US-born, raised between California and Korea. Trained as a lawyer in the United States, currently licensed in California. Father of two. Husband to someone who is the better operator of the two of us.
+US-born, raised between California and Korea. Lives in Seoul. Father of two. Husband to someone who is the better operator of the two of us.
 
-I run three distinct working surfaces in parallel: a regulatory advisory practice in digital assets, an education company my wife and I founded, and an AI-content / writing identity that bridges the two. Each surface has its own context, its own deadlines, its own stakeholders, and would otherwise demand a separate AI for each. The whole point of the stack documented in this repository is that one AI can hold all three.
+I run three distinct working surfaces in parallel: an advisory practice, an education company my wife and I founded, and the AI-content and writing identity at thedimode.com. Each surface has its own context, its own deadlines, its own stakeholders, and would otherwise demand a separate AI for each. The whole point of the stack documented in this repository is that one AI can hold all three.
 
 ## What I am working on right now
 
 - Co-authoring a parenting book due to a Korean trade publisher. Primary language Korean, secondary English. Manuscript in late-stage editorial cycle.
 - Building the curriculum and the technical platform for the education company. Founding members onboard in three weeks.
-- Advising a small number of digital-asset clients on Korea-side regulatory strategy and US/Korea engagement.
+- Active advisory engagements with a small number of clients.
 - Maintaining an opinionated Korean-language AI identity for a small but high-signal audience.
 
 ## How I think

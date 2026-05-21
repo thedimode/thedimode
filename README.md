@@ -1,6 +1,6 @@
-# Tim Shin
+# Timothy Shin
 
-Building a discipline of personal AI architecture.
+AI Operator. Building a discipline of personal AI architecture.
 
 [thedimode.com](https://thedimode.com) · [@thedimode](https://instagram.com/thedimode) on Instagram
 
@@ -20,7 +20,7 @@ The repository is scaffolding at v0.9. The first sanitized files (`identity/prof
 
 When the files ship, they follow this contract:
 
-**Sanitized:** client names, project names, engagement details (the maintainer is an attorney; client identity is privileged regardless of public-facing context); family members' identifying information; private financial information; internal communications; specific addresses, phone numbers, account details.
+**Sanitized:** client names, project names, engagement details (client identity is treated as confidential regardless of public-facing context); family members' identifying information; private financial information; internal communications; specific addresses, phone numbers, account details.
 
 **Not sanitized:** the voice of every document; the depth of observation; the structure of every file; the chronology of decisions; the failure cases at full depth.
 
@@ -32,4 +32,4 @@ If you copy this repository and adapt it, you inherit the form. The content is m
 
 ---
 
-Timothy Shin · California attorney · Korea digital-asset policy advisor
+Timothy Shin · AI Operator
