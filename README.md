@@ -8,7 +8,7 @@ AI Operator. Building a discipline of personal AI architecture.
 
 - **[personal-ai-architecture](https://github.com/thedimode/personal-ai-architecture)** — the specification for owning your AI in files you control
 - **[operator-stack](https://github.com/thedimode/operator-stack)** — reference implementation: nine prompts, file templates, hooks
-- **[The workbook](https://thedimode.com/workbook)** — guided 90-day practice for building your own operator stack
+- **[The Operator's Handbook](https://thedimode.com/handbook)** — guided 90-day practice for building your own operator stack
 
 ## About this repository
 

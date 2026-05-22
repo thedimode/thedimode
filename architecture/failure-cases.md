@@ -60,9 +60,9 @@ Six versions of the same document. Eleven months of unpurged drafts. Three skele
 
 The corrective principle: when the operator notices a "current" alongside a "previous," one of the two must be retired before the day ends. The cost of leaving both is paid in attention every time the operator searches for the truth.
 
-## What this teaches an external operator following the workbook
+## What this teaches an external operator following the handbook
 
-If you are following the [workbook](https://thedimode.com/workbook), you will hit a version of this moment somewhere around Week 6 or Week 7. The signs:
+If you are following the [Operator's Handbook](https://thedimode.com/handbook), you will hit a version of this moment somewhere around Week 6 or Week 7. The signs:
 
 - A file you set up and never read again.
 - A scheduled job that produces a report you delete every morning.
@@ -76,3 +76,53 @@ This is the part of the build that nobody teaches because it does not photograph
 ---
 
 *Future failure cases will append to this file as they happen. The discipline requires that failures be documented at full depth, with dates, scope, and corrective principles. Sanitized for client/family/financial privacy per the [README](../README.md) contract; otherwise full depth.*
+
+## 2026-05-22 · The persona-delta system was never finished. Then it was rebuilt.
+
+### What broke
+
+The previous failure case (May 13) retired a silent in-session persona-delta capture system because LLMs are not reliable subprocesses. The replacement at the time was a fact-extractor at session-stop — which captured facts well but did not specifically isolate identity-level signals worth promoting into the canonical persona profile.
+
+For nine days the system captured facts. Plenty of facts. None of them flowed into the persona file. The Stop hook ran, the consolidator dedup'd, the report generated. The canonical `tim_persona_profile.md` did not update. The loop was technically closed but operationally open: the AI's model of the operator drifted further from reality every day, silently, while the dashboards reported success.
+
+### What was missing
+
+Three things, in retrospect.
+
+**One: no kind that separated identity from incident.** The fact extractor's `[observation]` was a catch-all. A behavioral pattern worth promoting to a canonical persona file looks the same in the buffer as a session-local note worth forgetting next week. The downstream promoter had no signal to prioritize.
+
+**Two: no promotion pipeline at all.** The fact-review report listed facts by kind. It did not pair them with target sections in the persona file. It did not surface a workflow for the operator to approve or reject. It assumed the operator would scroll the report monthly and edit the persona file manually. The operator did not.
+
+**Three: no cadence.** The May 13 architectural lesson said *"explicit user-driven ritual outperforms silent automation for identity-level state."* The lesson was correct. But "ritual" without a scheduled prompt is just a hope.
+
+### What was done
+
+In one session:
+
+- Added `[persona]` as a distinct fact kind in the extraction prompt, with a sharp test: *if the signal answers "who is the operator?" or "how should AI behave with them forever?" use `[persona]`. Otherwise use `[observation]`.*
+- Updated the consolidator to surface `[persona]` at the top of the weekly review report, with explicit promotion target (`tim_persona_profile.md`).
+- Built `vault-persona-refresh.py` — a weekly script that filters `[persona]` candidates from the last seven days, proposes a target section in the persona profile, and writes a review file (`01_Identity/persona_deltas/_pending_review_YYYY-MM-DD.md`) the operator marks inline as APPROVE / REJECT / EDIT.
+- Added `--apply` mode that promotes APPROVED candidates into the canonical persona file and archives the review file.
+- Proposed weekly cron at Sunday 22:00 KST.
+
+The first run captured five `[persona]` candidates within twelve hours. Whether they survive review will be visible in the next archive file.
+
+### What was learned, in priority order
+
+**One: a working system requires the entire loop, not just the visible parts.** The May 13 redesign closed Layer 1 (extract). The May 22 build closed Layer 2 (surface) and Layer 3 (promote). All three layers are necessary; any one missing means the loop reports activity without producing change.
+
+**Two: distinguish identity from incident at the source.** When everything is `[observation]`, nothing is canonical. The cost of adding a sharp kind label at extraction time is one paragraph in a prompt. The cost of not having it is months of unprocessed signal.
+
+**Three: rituals require scheduled prompts.** A weekly review file that the operator has to remember to look at will not get looked at. A weekly review file that lands at a fixed time in a place the operator already opens (a vault folder they read on Sunday evenings) gets looked at. The location and time matter more than the content quality.
+
+### What this teaches an external operator following the handbook
+
+The full identity-learning loop has three components and all three must work:
+
+1. **Capture** — a Stop-hook or equivalent that pulls identity-level signals from the session, tagged distinctly from session-local facts.
+2. **Surface** — a weekly or monthly job that produces a focused review the operator can scan in five minutes, with proposed target sections in the persona file.
+3. **Promote** — an apply step the operator runs (or that runs on their approval) that updates the canonical file and archives the review.
+
+Missing any one of these and the loop reports success while degrading silently. The May 13 lesson taught us LLMs are not reliable subprocesses. The May 22 lesson taught us that closing one layer is not closing the loop.
+
+---
