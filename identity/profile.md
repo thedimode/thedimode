@@ -1,5 +1,5 @@
 ---
-spec: thedimode/personal-ai-architecture/sections/01-identity-files
+spec: thedimode/the-dimode-method/sections/01-identity-files
 schema: profile.v1
 last_updated: 2026-05-21
 canonical: true
@@ -63,4 +63,4 @@ To be ahead of where AI takes the rest of the professional class in five years. 
 
 ---
 
-*Loaded at the start of every session by Prompt 2 (Identity Loader). Refresh cadence: meaningful updates monthly; full review quarterly. Format compliant with the v1 `profile` schema in the [Personal AI Architecture specification](https://github.com/thedimode/personal-ai-architecture/blob/main/sections/01-identity-files/).*
+*Loaded at the start of every session by Prompt 2 (Identity Loader). Refresh cadence: meaningful updates monthly; full review quarterly. Format compliant with the v1 `profile` schema in the [Personal AI Architecture specification](https://github.com/thedimode/the-dimode-method/blob/main/sections/01-identity-files/).*

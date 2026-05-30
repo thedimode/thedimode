@@ -49,7 +49,7 @@ The format is loose: every entry has a date, a one-line summary, and (where rele
 
 ## 2026-05-21 · Three GitHub repos shipped
 
-- [thedimode/personal-ai-architecture](https://github.com/thedimode/personal-ai-architecture) (CC BY 4.0) — the specification.
+- [thedimode/the-dimode-method](https://github.com/thedimode/the-dimode-method) (CC BY 4.0) — the specification.
 - [thedimode/operator-stack](https://github.com/thedimode/operator-stack) (MIT) — the reference implementation.
 - [thedimode/thedimode](https://github.com/thedimode/thedimode) (CC BY-NC 4.0) — this repo, the personal proof artifact.
 - Section 01 (Identity files) of the specification shipped at draft v0.1.
